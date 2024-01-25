@@ -2,61 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Challenge: Classes of elements</title>
+    <title>Challenge: Descendants of Khan</title>
     <style>
-      .metal {
-        color: red;
+      .emperor {
+        font-family: cursive;
       }
-      .non-metal {
-        color: blue;
+      table .emperor {
+        background: teal;
       }
-      .semi-metal {
-        color: purple;
+      .reign {
+        font-family: monospace;
       }
-      h2.metal {
-        background-color: red;
-        color: white;
-      }
-      h2.non-metal {
-        background-color: blue;
-        color: white;
-      }
-      h2.semi-metal {
-        background-color: purple;
-        color: white;
+      table .reign {
+        background: orange;
       }
     </style>
   </head>
   <body>
-    <h1>The Periodic Table</h1>
+    <h1>Descendants of Khan</h1>
 
     <p>
-      There are three broad classes of elements:
-      <strong class="metal">metals</strong>,
-      <strong class="non-metal">non-metals</strong>, and
-      <strong class="semi-metal">semi-metals</strong>.
+      <strong class="emperor">Genghis Khan</strong> (<span class="reign"
+        >1206-1227</span
+      >) was a emperor who had many sons and daughters, and many famous emperors
+      are descended from him. (But not Sal Khan!)
     </p>
 
-    <h2 class="metal">Metals</h2>
-
-    <ul>
-      <li>Solid</li>
-      <li>Good conductors of electricity</li>
-      <li>Ductile</li>
-      <li>Malleable</li>
-    </ul>
-
-    <h2 class="non-metal">Non-metals</h2>
-
-    <ul>
-      <li>Brittle</li>
-      <li>Poor conductors</li>
-    </ul>
-
-    <h2 class="semi-metal">Semi-metals (Metalloids)</h2>
-
-    <ul>
-      <li>Partially conduct electricity</li>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Reign</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="emperor">Ögedei Khan</td>
+          <td class="reign">1229-1241</td>
+        </tr>
+        <tr>
+          <td class="emperor">Kublai Khan</td>
+          <td class="reign">1260-1294</td>
+        </tr>
+        <tr>
+          <td class="emperor">Temür Khan</td>
+          <td class="reign">1294-1307</td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
