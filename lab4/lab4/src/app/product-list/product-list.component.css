@@ -102,3 +102,19 @@ span {
   display: flex;
   justify-content: space-between;
 }
+
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar input {
+  width: 600px;
+  border-radius: 30px;
+}
+.search-bar label {
+  font-size: 15px;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+}

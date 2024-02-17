@@ -9,12 +9,13 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GalleryComponent } from '@daelmaak/ngx-gallery';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   imports: [
-    BrowserModule,
+    BrowserModule,FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },

@@ -1,5 +1,10 @@
+<div class="search-bar ">
+  <label for="search">Search by Product Name:</label>
+  <input type="text" id="search" [(ngModel)]="searchInput" />
+</div>
+
 <div class="product-container">
-  <div *ngFor="let product of products" class="product-card">
+  <div *ngFor="let product of filteredProducts" class="product-card">
     <div *ngFor="let image of product.img; let i = index">
       <img
         [src]="image"
@@ -45,8 +50,13 @@
         {{ product.name }}
       </a>
     </h3>
-    <p *ngIf="product.description">Description: {{ product.description }}</p>
-    <p *ngIf="product.price">{{ product.price }}₸</p>
+    <p *ngIf="product.description">
+      <span>Description: </span>{{ product.description }}
+    </p>
+    <p *ngIf="product.price" class="price">
+      <span>{{ product.price }} </span
+      > ₸
+    </p>
     <ngb-rating
       [max]="5"
       [(rate)]="product.rating"
