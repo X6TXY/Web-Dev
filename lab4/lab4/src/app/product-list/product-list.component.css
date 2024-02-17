@@ -56,3 +56,49 @@ img {
   width: 100%;
   height: auto;
 }
+
+ngb-rating {
+  color: yellow;
+  font-size: 20px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 10px;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+.image-buttons {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}

@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { GalleryComponent } from '@daelmaak/ngx-gallery';
+
+
 
 @NgModule({
   imports: [
@@ -14,7 +18,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-    ])
+    ]),
+    NgbModule,
+    GalleryComponent
   ],
   declarations: [
     AppComponent,
@@ -29,8 +35,3 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 export class AppModule { }
 
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

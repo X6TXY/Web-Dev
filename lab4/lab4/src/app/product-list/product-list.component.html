@@ -1,16 +1,58 @@
 <div class="product-container">
   <div *ngFor="let product of products" class="product-card">
-    <img [src]="product.img[0]" [alt]="product.name" />
+    <div *ngFor="let image of product.img; let i = index">
+      <img
+        [src]="image"
+        [alt]="product.name"
+        *ngIf="i === product.currentImageIndex"
+      />
+    </div>
+    <div class="button-row">
+      <button type="button" class="image-buttons" (click)="prevImage(product)">
+        <svg
+          width="24"
+          height="24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        >
+          <path
+            d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"
+          />
+        </svg>
+      </button>
+      <button type="button" class="image-buttons" (click)="nextImage(product)">
+        <svg
+          width="24"
+          height="24"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        >
+          <path
+            d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"
+          />
+        </svg>
+      </button>
+    </div>
     <h3>
-      <a [title]="product.name + ' details'" [href]="product.link">
+      <a
+        [title]="product.name + ' details'"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {{ product.name }}
       </a>
     </h3>
-
     <p *ngIf="product.description">Description: {{ product.description }}</p>
     <p *ngIf="product.price">{{ product.price }}₸</p>
-
-    <div class="button-container">
+    <ngb-rating
+      [max]="5"
+      [(rate)]="product.rating"
+      [readonly]="true"
+    ></ngb-rating>
+    <div class="button-container button-row">
       <button type="button" (click)="share(product.name, product.link)">
         Share with WhatsApp
       </button>

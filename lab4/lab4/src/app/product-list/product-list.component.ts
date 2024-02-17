@@ -4,10 +4,11 @@ import { Product, products } from '../products';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
-  products: Product[] = [...products];
+  products: Product[] = products;
+
   share(productName: string, productLink: string) {
     const shareMessage = `Check out this product: ${productName} - ${productLink}`;
     const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
@@ -20,7 +21,16 @@ export class ProductListComponent {
     window.location.href = whatsappLink;
   }
 
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  nextImage(product: Product) {
+    if (product.img.length > 1) {
+      product.currentImageIndex = (product.currentImageIndex + 1) % product.img.length;
+    }
+  }
+
+  prevImage(product: Product) {
+    if (product.img.length > 1) {
+      product.currentImageIndex =
+        (product.currentImageIndex - 1 + product.img.length) % product.img.length;
+    }
   }
 }
