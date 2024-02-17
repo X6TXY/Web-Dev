@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 12rem;
 }
 
 .product-card {
