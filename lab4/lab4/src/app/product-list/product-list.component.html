@@ -1,4 +1,4 @@
-<div class="search-bar ">
+<div class="search-bar">
   <label for="search">Search by Product Name:</label>
   <input type="text" id="search" [(ngModel)]="searchInput" />
 </div>
@@ -43,9 +43,7 @@
     <h3>
       <a
         [title]="product.name + ' details'"
-        [href]="product.link"
-        target="_blank"
-        rel="noopener noreferrer"
+        [routerLink]="['/products', product.id]"
       >
         {{ product.name }}
       </a>
@@ -54,8 +52,7 @@
       <span>Description: </span>{{ product.description }}
     </p>
     <p *ngIf="product.price" class="price">
-      <span>{{ product.price }} </span
-      > ₸
+      <span>{{ product.price }} </span> ₸
     </p>
     <ngb-rating
       [max]="5"
@@ -69,6 +66,8 @@
       <button type="button" (click)="sharetg(product.name, product.link)">
         Share with Telegram
       </button>
+      <app-product-alerts [product]="product" (notify)="onNotify()">
+      </app-product-alerts>
     </div>
   </div>
 </div>

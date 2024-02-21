@@ -39,4 +39,7 @@ export class ProductListComponent {
         (product.currentImageIndex - 1 + product.img.length) % product.img.length;
     }
   }
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
 }
