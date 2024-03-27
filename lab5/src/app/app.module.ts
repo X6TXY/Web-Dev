@@ -1,10 +1,8 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
@@ -18,7 +16,8 @@ import { ViewCategoriesComponent } from './view-categories/view-categories.compo
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,HttpClientModule,
+    FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     NgbModule,
     RouterModule.forRoot([
@@ -27,6 +26,7 @@ import { ViewCategoriesComponent } from './view-categories/view-categories.compo
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
+      { path: 'view-categories', component: ViewCategoriesComponent }, 
     ]),
   ],
   declarations: [

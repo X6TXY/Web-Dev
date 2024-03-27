@@ -1,4 +1,4 @@
-let todos = [];
+let   = [];
 let inputvalue = '';
 
 function handleInputValue(event) {
